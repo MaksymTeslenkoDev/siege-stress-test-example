@@ -23,8 +23,8 @@ if (process.stdout.isTTY) {
   opts.logger.transport = { target: 'pino-pretty' };
 }
 
-const port = process.env.PORT || 3000;
-const host = process.env.HOST || '127.0.0.1';
+const port = process.env.APP_PORT || 3000;
+const host = process.env.APP_HOST || '127.0.0.1';
 
 const app = await build(opts);
 await app.listen({ port, host });

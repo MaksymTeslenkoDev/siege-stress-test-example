@@ -3,10 +3,10 @@ services:
   app:
     container_name: siege-stress-test-app
     build: .
-    ports:
-      - '${APP_PORT}:3000'
     env_file:
       - .env
+    ports:
+      - '${APP_PORT}:3000'
     depends_on:
       - postgresql
 
